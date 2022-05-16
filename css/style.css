@@ -7,7 +7,63 @@
     box-sizing: border-box;
 }
 
+/* VARIABLES */
+:root {
+    --aside-width: 200px;
+    --footer-height: 60px;
+    --upgrade-height: 60px;
+}
+
+/* DEBUG */
+.upgrade {
+    background-color: blue;
+}
+aside {
+    background-color: red;
+}
+main {
+    background-color: yellow;
+}
+footer {
+    background-color: green;
+}
+
 /* COMMON */
 body {
     font-family: 'Montserrat', sans-serif;;
+}
+aside,
+main {
+    height: calc(100vh - var(--footer-height));
+}
+.flex-container {
+    display: flex;
+}
+ul {
+    list-style-type: none;
+}
+
+/* UPGRADE */
+.upgrade {
+    width: calc(100% - var(--aside-width));
+    height: var(--upgrade-height);
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* ASIDE NAV */
+aside {
+    width: var(--aside-width);
+}
+
+/* MAIN CONTENT */
+main {
+    width: calc(100% - var(--aside-width));
+    
+}
+
+/* FOOTER PLAYER */
+footer {
+    height: var(--footer-height);
 }
