@@ -12,30 +12,25 @@
     --aside-width: 200px;
     --footer-height: 60px;
     --upgrade-height: 60px;
-    --grey-txt-color: #424242;
+    --grey-txt-color: #a3a3a3;
+    --aside-padding: 0.8rem;
 }
 
 /* DEBUG */
 .upgrade {
     background-color: blue;
 }
-aside {
-    background-color: red;
-}
-main {
-    background-color: yellow;
-}
 footer {
     background-color: green;
 }
-.side-nav li:hover {
-    box-shadow: 2px 0 black inset;
-}
+
 /* COMMON */
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.7rem;
+    font-weight: 500;
     color: var(--grey-txt-color);
+    background-color: #141922;
 }
 aside,
 main {
@@ -55,6 +50,10 @@ a {
     text-decoration: none;
     color: inherit;
 }
+li:hover a,
+a:hover {
+    color: white;
+}
 
 /* UPGRADE */
 .upgrade {
@@ -66,29 +65,175 @@ a {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* ASIDE NAV */
+/* ASIDE NAVIGATIONS */
 aside {
     width: var(--aside-width);
+    background-color: black;
+    overflow-y: hidden;
 }
-.side-nav li {
-    padding-left: 2rem;
+
+/* BIG SCREEN ASIDE */
+.side-nav-logo {
+    padding: 1rem var(--aside-padding);
+}
+.big-logo {
+    width: 65%;
+}
+.side-nav li,
+.new-playlist,
+.playlists li {
+    padding-left: var(--aside-padding);
 }
 .side-nav img {
     width: 1.3rem;
     display: inline-block;
     vertical-align: middle;
+    filter: invert(40%);
 }
 .side-nav span {
     vertical-align: middle;
+}
+.side-nav li {
+    margin-bottom: 0.3rem;
+}
+.side-nav li:hover,
+.playlists li:hover {
+    box-shadow: 2px 0 #91c72c inset;
+}
+.side-nav li:hover img {
+    filter: none;
+}
+.playlist-title {
+    margin: 1.5rem 0 0.5rem;
+    color: white;
+}
+.new-playlist {
+    margin-bottom: 0.5rem;
+}
+.new-playlist span {
+    vertical-align: middle;
+}
+.plus {
+    margin-right: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    color: black;
+    background-color: var(--grey-txt-color);
+}
+.playlists li {
+    line-height: 1.6rem;
+}
+.aside-bottom {
+    padding: 0 var(--aside-padding);
+    width: var(--aside-width);
+    position: absolute;
+    left: 0;
+    bottom: var(--footer-height);
+    background-color: black;
+}
+.install {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--grey-txt-color);
+}
+.app-install {
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 1px solid var(--grey-txt-color);
+    display: inline-block;
+    font-size: 0.5rem;
+    border-radius: 50%;
+    line-height: 0.8rem;
+    text-align: center;
+}
+.install:hover .app-install {
+    border: 1px solid white;
+}
+.install:hover {
+    color: white;
+}
+.install > a {
+    font-size: 0.6rem;
+}
+.profile {
+    padding: 0.6rem 0;
+}
+.user-name,
+.profile-pic {
+    vertical-align: middle;
+}
+.profile-pic {
+    margin-right: 0.3rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: var(--grey-txt-color);
+}
+.user-name {
+    font-weight: 700;
+    color: white;
+}
+.user-name:hover {
+    color: #91c72c;
+}
+
+/* SMALL SCREEN ASIDE */
+.small-screens-aside {
+    display: none;
+}
+.side-nav-logo .small-logo {
+    width: 1.3rem;
+    display: none;
 }
 
 /* MAIN CONTENT */
 main {
     width: calc(100% - var(--aside-width));
-    
 }
 
 /* FOOTER PLAYER */
 footer {
     height: var(--footer-height);
+    position: relative;
+    z-index: 10;
+    background-color: #282828;
+}
+
+/***************************************************
+                    MEDIA QUERIES
+***************************************************/
+/* XS */
+@media screen and (max-width: 600px) {
+    /* VARIABLES */
+    :root {
+        --aside-width: 50px;
+        --aside-padding: 0;
+    }
+
+    /* COMMON */
+    .small-screen-hidden {
+        display: none;
+    }
+
+    /* ASIDE NAVIGATIONS */
+    aside {
+        text-align: center;
+    }
+    .side-nav-logo .small-logo {
+        display: inline-block;
+    }
+    .install {
+        border-bottom: none;
+    }
+    .profile-pic {
+        margin-right: 0;
+    }
+    .side-nav li:hover,
+    .playlists li:hover {
+        box-shadow: none;
+    }
 }
