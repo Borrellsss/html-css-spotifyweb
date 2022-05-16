@@ -12,6 +12,7 @@
     --aside-width: 200px;
     --footer-height: 60px;
     --upgrade-height: 60px;
+    --grey-txt-color: #424242;
 }
 
 /* DEBUG */
@@ -27,10 +28,14 @@ main {
 footer {
     background-color: green;
 }
-
+.side-nav li:hover {
+    box-shadow: 2px 0 black inset;
+}
 /* COMMON */
 body {
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--grey-txt-color);
 }
 aside,
 main {
@@ -42,6 +47,14 @@ main {
 ul {
     list-style-type: none;
 }
+img {
+    width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 /* UPGRADE */
 .upgrade {
@@ -52,9 +65,21 @@ ul {
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 /* ASIDE NAV */
 aside {
     width: var(--aside-width);
+}
+.side-nav li {
+    padding-left: 2rem;
+}
+.side-nav img {
+    width: 1.3rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.side-nav span {
+    vertical-align: middle;
 }
 
 /* MAIN CONTENT */
