@@ -13,10 +13,14 @@
 </head>
 <body>
     <!-- UPGRADE -->
-    <div class="upgrade"></div>
+    <div class="upgrade flex-container">
+        <a class="upgrade-btn" href="#">EFFETTUA L'UPGRADE</a>
+    </div>
+    <!-- UPGRADE END -->
+
     <div class="flex-container">
         <!-- ASIDE NAVIGATIONS -->
-        <aside>
+        <aside class="flex-container">
             <div class="side-nav-logo">
                 <a class="small-screen-hidden" href="#">
                     <img class="big-logo" src="img/logo.svg" alt="logo">
@@ -52,48 +56,46 @@
                 </ul>
             </nav>
 
-            <div>
-                <div class="new-playlist small-screen-hidden">
-                    <div class="playlist-title">PLAYLIST</div>
+            <div class="new-playlist small-screen-hidden">
+                <div class="playlist-title">PLAYLIST</div>
+                <span class="create">
                     <span class="plus">
                         <i class="fa-solid fa-plus"></i>
                     </span>
-                    <span>
-                        <a href="#">Crea Playlist</a>
-                    </span>
-                </div>
+                    <a href="#">Crea Playlist</a>
+                </span>
+            </div>
 
-                <div class="playlists small-screen-hidden">
-                    <ul>
-                        <li>
-                            <a href="#">Nome Playlist</a>
-                        </li>
+            <div class="playlists small-screen-hidden">
+                <ul>
+                    <li>
+                        <a href="#">Nome Playlist</a>
+                    </li>
 
-                        <li>
-                            <a href="#">Nome Playlist</a>
-                        </li>
+                    <li>
+                        <a href="#">Nome Playlist</a>
+                    </li>
 
-                        <li>
-                            <a href="#">Nome Playlist</a>
-                        </li>
+                    <li>
+                        <a href="#">Nome Playlist</a>
+                    </li>
 
-                        <li>
-                            <a href="#">Nome Playlist</a>
-                        </li>
+                    <li>
+                        <a href="#">Nome Playlist</a>
+                    </li>
 
-                        <li>
-                            <a href="#">Nome Playlist</a>
-                        </li>
+                    <li>
+                        <a href="#">Nome Playlist</a>
+                    </li>
 
-                        <li>
-                            <a href="#">Nome Playlist</a>
-                        </li>
+                    <li>
+                        <a href="#">Nome Playlist</a>
+                    </li>
 
-                        <li>
-                            <a href="#">Nome Playlist</a>
-                        </li>
-                    </ul>
-                </div>
+                    <li>
+                        <a href="#">Nome Playlist</a>
+                    </li>
+                </ul>
             </div>
 
             <div class="aside-bottom">
@@ -116,7 +118,89 @@
         <!-- ASIDE NAVIGATIONS END -->
 
         <!-- MAIN CONTENT -->
-        <main></main>
+        <main>
+            <!-- MAIN NAV -->
+            <nav class="main-nav">
+                <ul class="flex-container">
+                    <li>
+                        <a href="#">IN EVIDENZA</a>
+                    </li>
+
+                    <li>
+                        <a href="#">PODCAST</a>
+                    </li>
+
+                    <li>
+                        <a href="#">CLASSIFICHE</a>
+                    </li>
+
+                    <li>
+                        <a href="#">GENERI E MOOD</a>
+                    </li>
+
+                    <li>
+                        <a href="#">NUOVE USCITE</a>
+                    </li>
+
+                    <li>
+                        <a href="#">SCOPRI</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- MAIN NAV END -->
+
+            <!-- FIRST SECTION -->
+            <section>
+                <h2>Recently played</h2>
+
+                <!-- SECTION ROW -->
+                <div class="flex-container">
+                    <div class="col">
+                        <div class="card">
+                            <div class="main-card-img">
+                                <img src="img/metal_lifting.jpg" alt="metal">
+                                <div class="player">
+                                    <a href="#">
+                                        <i class="fa-solid fa-play"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="img/stranger.jpeg" alt="stranger">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="img/aquietplace.jpeg" alt="aquietplace">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="img/split.jpeg" alt="split">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="img/cure.jpeg" alt="cure">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <img src="img/sinister.jpeg" alt="sinister">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- FIRST SECTION END -->
+        </main>
     </div>
     <!-- FOOTER PLAYER -->
     <footer></footer>
