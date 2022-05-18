@@ -9,8 +9,10 @@
 
 /* VARIABLES */
 :root {
-    --aside-width: 200px;
+    --aside-width: 160px;
     --footer-height: 60px;
+    --footer-margin: 1rem;
+    --footer-padding: 0.4rem;
     --upgrade-height: 60px;
     --grey-txt-color: #a3a3a3;
     --aside-padding: 0.8rem;
@@ -59,6 +61,10 @@ h2 {
 h3 {
     margin-top: 0.5rem;
     font-size: 0.8rem;
+    color: white;
+}
+h4 {
+    font-size: 0.7rem;
     color: white;
 }
 .subtitle {
@@ -174,22 +180,22 @@ aside {
 }
 .install {
     padding: 0.5rem 0;
-    border-bottom: 1px solid var(--grey-txt-color);
-}
-.app-install {
-    width: 0.8rem;
-    height: 0.8rem;
-    border: 1px solid var(--grey-txt-color);
     display: inline-block;
-    font-size: 0.5rem;
-    border-radius: 50%;
-    line-height: 0.8rem;
-    text-align: center;
+    color: var(--grey-txt-color);
 }
-.install:hover .app-install {
-    border: 1px solid white;
+.install * {
+    vertical-align: middle;
 }
-.install:hover {
+.install img {
+    width: 1rem;
+    display: inline-block;
+    filter: brightness(50%);
+}
+.install:hover img {
+    filter: none;
+    cursor: pointer;
+}
+.install:hover > a {
     color: white;
 }
 .install > a {
@@ -197,6 +203,7 @@ aside {
 }
 .profile {
     padding: 0.6rem 0;
+    border-top: 1px solid var(--grey-txt-color);
 }
 .user-name,
 .profile-pic {
@@ -287,14 +294,8 @@ section > .flex-container {
 }
 .player {
     /* display: none; */
-    width: 40px;
-    height: 40px;
     font-size: 25px;
     color: white;
-    border: 4px solid white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 32px;
     display: none;
     position: absolute;
     left: 50%;
@@ -313,8 +314,102 @@ section > .flex-container {
 
 /* FOOTER PLAYER */
 footer {
+    padding: 0 var(--footer-padding);
     height: var(--footer-height);
     background-color: #282828;
+    align-items: center;
+    color: white;
+}
+footer > div {
+    width: calc(var(--aside-width) - var(--footer-padding));
+}
+footer > div:nth-child(2) {
+    flex-grow: 1;
+}
+
+/* SONG SIDE */
+.song-side {
+    align-items: center;
+}
+.song-side > div:first-of-type {
+    flex-grow: 1;
+}
+.player-img,
+.song-side div:first-of-type,
+.song-side-icons span {
+    margin-right: 0.5rem;
+}
+.player-img {
+    width: auto;
+    height: 3rem;
+}
+.song-name {
+    font-size: 0.5rem;
+    color: var(--grey-txt-color);
+}
+.song-side div:first-child {
+    flex-grow: 1;
+}
+.song-side-icons {
+    color: var(--grey-txt-color);
+}
+.song-side-icons span:hover {
+    color: white;
+}
+
+/* CONTROLS SIDE */
+.controls-side {
+    padding: 0 var(--footer-padding);
+    text-align: center;
+}
+.footer-play {
+    margin: 0 var(--footer-margin);
+}
+.controls > span:nth-child(2) {
+    margin-left: var(--footer-margin);
+}
+.controls > span:nth-child(4) {
+    margin-right: var(--footer-margin);
+}
+.controls > span {
+    cursor: pointer;
+}
+.controls-side > div:last-of-type {
+    margin-top: 0.6rem;
+}
+.controls-side > div:last-of-type  span {
+    font-size: 0.5rem;
+}
+
+/* VOLUME SIDE */
+.volume-side {
+    align-items: center;
+}
+.volume-side > span {
+    margin-right: 0.7rem;
+    cursor: pointer;
+}
+.volume-bar {
+    flex-grow: 1;
+}
+
+/* CUSTOM FOOTER BARS */
+.custom-bar {
+    height: 3px;
+    border-radius: 3px;
+    background-color: #5a5a5a;
+}
+.custom-bar > div {
+    width: 25%;
+    height: 100%;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.progress-bar {
+    margin: 0 var(--footer-margin);
+    width: 50%;
+    display: inline-block;
 }
 
 /***************************************************
@@ -333,12 +428,26 @@ footer {
 
 /* S */
 @media screen and (max-width: 700px) {
+    /* VARIABLES */
+    :root {
+        --footer-margin: 3%;
+    }
+
     /* MAIN SECTIONS */
     section > .flex-container {
         gap: 0.5rem;
     }
     .col {
         width: calc(100% / 2 - 0.25rem)
+    }
+
+    /* FOOTER */
+    footer > div{
+        width: 25%;
+    }
+    .volume-side > span {
+        margin-right: var(--footer-margin);
+        cursor: pointer;
     }
 }
 
@@ -362,8 +471,8 @@ footer {
     .side-nav-logo .small-logo {
         display: inline-block;
     }
-    .install {
-        border-bottom: none;
+    .profile {
+        border-top: none;
     }
     .profile-pic {
         margin-right: 0;
@@ -374,5 +483,10 @@ footer {
     }
     .side-nav {
         flex-grow: 1;
+    }
+
+    /* FOOTER */
+    .player-img {
+        height: 1.5rem;
     }
 }
