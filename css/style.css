@@ -18,17 +18,7 @@
 }
 
 /* DEBUG */
-section {
-    background-color: aqua;
-    border: 1px solid red;
-}
-.col {
-    background-color: yellow;
-    border: 1px solid black;
-}
-.card {
-    background-color: blue;
-}
+
 /* COMMON */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -51,6 +41,9 @@ img {
     width: 100%;
     display: block;
 }
+.rounded-img {
+    border-radius: 50%;
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -60,9 +53,18 @@ a:hover {
     color: white;
 }
 h2 {
-    margin: 0.8rem 0;
     font-size: 1.1rem;
     color: white;
+}
+h3 {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: white;
+}
+.subtitle {
+    margin-top: 0.3rem;
+    display: inline-block;
+    font-size: 0.6rem;
 }
 
 /* UPGRADE */
@@ -76,6 +78,7 @@ h2 {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    z-index: 5;
 }
 .upgrade-btn {
     margin-right: 0.8rem;
@@ -266,6 +269,12 @@ main {
 }
 
 /* MAIN SECTIONS */
+section {
+    margin: 0.5rem 0;
+}
+.section-title {
+    margin: 2.5rem 0 1.2rem;
+}
 section > .flex-container {
     flex-wrap: wrap;
     gap: calc(3rem / 5);
@@ -273,8 +282,6 @@ section > .flex-container {
 .col {
     width: calc(100% / 6 - 0.5rem)
 }
-
-/* FIRST SECTION */
 .main-card-img {
     position: relative;
 }
@@ -300,9 +307,8 @@ section > .flex-container {
 .main-card-img:hover > img {
     filter: brightness(35%);
 }
-
-.player a {
-    
+.card-txt {
+    text-align: center;
 }
 
 /* FOOTER PLAYER */
@@ -365,5 +371,8 @@ footer {
     .side-nav li:hover,
     .playlists li:hover {
         box-shadow: none;
+    }
+    .side-nav {
+        flex-grow: 1;
     }
 }
