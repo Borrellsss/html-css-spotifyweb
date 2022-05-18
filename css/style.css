@@ -9,7 +9,7 @@
 
 /* VARIABLES */
 :root {
-    --aside-width: 160px;
+    --aside-width: 180px;
     --footer-height: 60px;
     --footer-margin: 1rem;
     --footer-padding: 0.4rem;
@@ -245,11 +245,8 @@ main {
 .main-nav {
     margin-top: var(--upgrade-height);
 }
-.main-nav li {
-    width: 5rem;
-    text-align: center;
-}
 .main-nav a {
+    padding: 0 0.5rem;
     font-size: 0.5rem;
     line-height: 2rem;
 }
@@ -263,7 +260,7 @@ main {
 }
 .main-nav a::before {
     content: "";
-    width: 55%;
+    width: 35%;
     border-bottom: 1.5px solid #91c72c;
     position: absolute;
     bottom: -0.3rem;
@@ -293,7 +290,6 @@ section > .flex-container {
     position: relative;
 }
 .player {
-    /* display: none; */
     font-size: 25px;
     color: white;
     display: none;
@@ -347,6 +343,9 @@ footer > div:nth-child(2) {
     font-size: 0.5rem;
     color: var(--grey-txt-color);
 }
+.song-name:hover {
+    text-decoration: underline;
+}
 .song-side div:first-child {
     flex-grow: 1;
 }
@@ -364,6 +363,9 @@ footer > div:nth-child(2) {
 }
 .footer-play {
     margin: 0 var(--footer-margin);
+}
+.footer-play:hover i {
+    transform: scale(1.1);
 }
 .controls > span:nth-child(2) {
     margin-left: var(--footer-margin);
@@ -395,21 +397,39 @@ footer > div:nth-child(2) {
 
 /* CUSTOM FOOTER BARS */
 .custom-bar {
-    height: 3px;
+    height: 3.5px;
     border-radius: 3px;
     background-color: #5a5a5a;
+    cursor: pointer;
 }
 .custom-bar > div {
     width: 25%;
     height: 100%;
     border-radius: 3px;
     background-color: white;
+    position: relative;
 }
-
 .progress-bar {
     margin: 0 var(--footer-margin);
     width: 50%;
     display: inline-block;
+}
+.progress-bullet {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(+50%, calc(-50% + 1.75px));
+    background-color: white;
+    display: none;
+}
+.custom-bar:hover > div {
+    background-color: #91c72c;
+}
+.custom-bar:hover .progress-bullet {
+    display: block;
 }
 
 /***************************************************
